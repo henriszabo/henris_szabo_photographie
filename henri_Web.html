@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZABO Henri WEB - Développeur Français</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Section principale -->
+    <section class="page">
+        <!-- Barre de navigation -->
+        <nav>
+            <div class="onglets">
+                <a href="#" class="active">Mes sociétés</a>
+                <a href="#">Les créations</a>
+                <a href="#">Me contacter</a>
+            </div>
+            <div class="buttons">
+                <button class="login">J'ai déjà un compte</button>
+                <button class="register">S'enregistrer</button>
+            </div>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1>La photographie a toujours été ma passion.</h1>
+        </header>
+
+        <!-- Galerie -->
+        <section class="gallery">
+            <h2>Mes créations</h2>
+            <div class="images">
+                <img src="file:///Users/henri/Pictures/Photos%20Library.photoslibrary/private/com.apple.Photos/ExternalEditSessions/257C0E43-4FAE-479A-A8E3-DC6F6716556C/GPTempDownload.jpeg" alt="Création 1">
+                <img src="file:///Users/henri/Pictures/Photos%20Library.photoslibrary/private/com.apple.Photos/ExternalEditSessions/E27F2FAD-546B-4DEF-AC54-2270001FEEA8/IMG_3054.jpeg" alt="Création 2">
+                <img src="file:///Users/henri/Pictures/Photos%20Library.photoslibrary/private/com.apple.Photos/ExternalEditSessions/C9D202FE-EBA1-40F7-B0E4-834D5CB305BA/IMG_1029.jpeg" alt="Création 3">
+            </div>
+        </section>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <h5>Des questions ? Appelez au 06 35 35 35 35</h5>
+        <div class="colonnes">
+            <div class="colonne">
+                <p><a href="#">Relations clients</a></p>
+                <p><a href="#">Relations Investisseurs</a></p>
+                <p><a href="#">Modes de lecture</a></p>
+                <p><a href="#">Mentions légales</a></p>
+            </div>
+            <div class="colonne">
+                <p><a href="#">Carrières</a></p>
+                <p><a href="#">Nos partenaires</a></p>
+                <p><a href="#">Blog officiel</a></p>
+                <p><a href="#">Presse</a></p>
+            </div>
+            <div class="colonne">
+                <p><a href="#">Aide</a></p>
+                <p><a href="#">Conditions d'utilisation</a></p>
+                <p><a href="#">Politique de confidentialité</a></p>
+                <p><a href="#">Cookies</a></p>
+            </div>
+            <div class="colonne">
+                <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+                <p><a href="#"><i class="fab fa-twitter"></i> Twitter</a></p>
+                <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                <p><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+            </div>
+        </div>
+        <p>© Henri Szabo - Développeur Français</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Menu mobile
+        const menuIcon = document.querySelector('.menu-icon');
+        const onglets = document.querySelector('.onglets');
+
+        menuIcon.addEventListener('click', () => {
+            onglets.classList.toggle('active');
+        });
+
+        // Défilement fluide
+        document.querySelectorAll('nav .onglets a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

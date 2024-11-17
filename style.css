@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #191919;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+body .page {
+    margin: 20px 80px;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191919;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .onglets {
+    display: flex;
+    gap: 20px;
+}
+
+nav .onglets a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+nav .onglets a:hover, nav .onglets a.active {
+    color: #f54266;
+    font-weight: bold;
+    border-bottom: 2px solid #f54266;
+}
+
+nav .buttons button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .buttons .login {
+    background-color: #141414;
+    color: #8f8f8f;
+}
+
+nav .buttons .login:hover {
+    color: #fff;
+}
+
+nav .buttons .register {
+    background-color: #f54266;
+    color: #fff;
+}
+
+nav .buttons .register:hover {
+    background-color: #e63d5d;
+}
+
+nav .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+    nav .onglets {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav .onglets.active {
+        display: flex;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+}
+
+/* Header */
+header {
+    margin-top: 40px;
+    text-align: center;
+    padding: 150px 0;
+    background: url('https://cdn.pixabay.com/photo/2016/04/01/08/28/camera-1298735_1280.png') no-repeat center;
+    background-size: 300px;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #fff;
+    animation: slideIn 2s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Galerie */
+.gallery {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.gallery .images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery .images img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery .images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Pied de page */
+footer {
+    background-color: #141414;
+    padding: 20px 100px;
+    color: #828282;
+}
+
+footer .colonnes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .colonne {
+    margin: 10px 0;
+}
+
+footer .colonne a {
+    color: #828282;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .colonne a:hover {
+    color: #f54266;
+}
